@@ -7,11 +7,11 @@ import HamburgerMenu from "./HamburgerMenu";
 
 const Header: FC = () => {
   return (
-    <header className="flex h-20 w-screen items-center justify-center bg-white px-6">
+    <header className="z-50 flex h-20 w-screen items-center justify-center bg-white px-6 backdrop-blur-lg">
       <nav className="flex w-screen max-w-screen-xl items-center justify-between">
-        <h1 className="text-2xl font-bold">Sahil.Saleem</h1>
+        <h1 className="z-50 text-2xl font-bold">Sahil.Saleem</h1>
 
-        <ul className="hidden items-center space-x-3 sm:flex ">
+        <ul className="z-50 hidden items-center space-x-3 sm:flex">
           <a
             href={process.env.NEXT_PUBLIC_YOUTUBE_LINK}
             target="_blank"
