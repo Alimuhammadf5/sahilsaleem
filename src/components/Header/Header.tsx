@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { FC } from "react";
-import twitterIcon from "../../public/icon/twitter.svg";
-import youtubeIcon from "../../public/icon/youtube.svg";
-import gmailIcon from "../../public/icon/gmail.svg";
-import { env } from "../env/server.mjs";
+import twitterIcon from "../../../public/icon/twitter.svg";
+import youtubeIcon from "../../../public/icon/youtube.svg";
+import gmailIcon from "../../../public/icon/gmail.svg";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Header: FC = () => {
   return (
-    <header className="flex h-20 w-screen items-center justify-center bg-white">
+    <header className="flex h-20 w-screen items-center justify-center bg-white px-6">
       <nav className="flex w-screen max-w-screen-xl items-center justify-between">
         <h1 className="text-2xl font-bold">Sahil.Saleem</h1>
 
-        <ul className="flex items-center space-x-3">
+        <ul className="hidden items-center space-x-3 sm:flex ">
           <a
             href={process.env.NEXT_PUBLIC_YOUTUBE_LINK}
             target="_blank"
@@ -66,6 +66,9 @@ const Header: FC = () => {
             Resume
           </button>
         </ul>
+
+        {/* hamburger menu */}
+        <HamburgerMenu />
       </nav>
     </header>
   );

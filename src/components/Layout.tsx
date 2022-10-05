@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { FC, ReactNode } from "react";
-import Header from "./Header";
+import Header from "./Header/Header";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
