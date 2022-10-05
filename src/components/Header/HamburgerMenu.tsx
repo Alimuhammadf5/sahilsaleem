@@ -43,7 +43,7 @@ const HamburgerMenu = () => {
             animate="open"
             exit="closed"
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-white sm:hidden"
+            className="fixed top-0 left-0 z-40 flex h-screen w-screen items-center justify-center bg-white sm:hidden"
           >
             <ul className="z-50 flex flex-col items-center justify-center space-y-7">
               <a
