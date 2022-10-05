@@ -47,7 +47,7 @@ const HamburgerMenu = () => {
           >
             <ul className="z-50 flex flex-col items-center justify-center space-y-7">
               <a
-                href={process.env.NEXT_PUBLIC_YOUTUBE_LINK}
+                href={process.env.NEXT_PUBLIC_TWITTER_LINK}
                 target="_blank"
                 rel="noreferrer"
                 className="scale-125"
@@ -82,7 +82,7 @@ const HamburgerMenu = () => {
                     className="opacity-40"
                   />
                   <span className="flex items-center text-sm font-bold opacity-70 transition-colors duration-300 ">
-                    YouTude
+                    YouTube
                   </span>
                 </li>
               </a>

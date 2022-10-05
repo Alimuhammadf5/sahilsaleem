@@ -13,7 +13,7 @@ const Header: FC = () => {
 
         <ul className="z-50 hidden items-center space-x-3 sm:flex">
           <a
-            href={process.env.NEXT_PUBLIC_YOUTUBE_LINK}
+            href={process.env.NEXT_PUBLIC_TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
           >
@@ -46,7 +46,7 @@ const Header: FC = () => {
                 className="opacity-40"
               />
               <span className="flex items-center text-sm font-bold opacity-70 transition-colors duration-300 ">
-                YouTude
+                YouTube
               </span>
             </li>
           </a>
