@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FC, useRef, useState } from "react";
 import playIcon from "../../public/icon/play.svg";
 
@@ -19,9 +20,12 @@ const Landing: FC = () => {
         <button className="h-12 w-44 rounded-md bg-gray-200 font-medium transition-colors duration-300 hover:bg-gray-300 sm:h-14">
           Contact me
         </button>
-        <button className="h-12 w-44 rounded-md bg-blue-600 font-medium text-white transition-colors duration-300 hover:bg-blue-800 sm:h-14">
-          Projects
-        </button>
+
+        <Link href={"/Projects"}>
+          <a className="flex h-12 w-44 items-center justify-center rounded-md bg-blue-600 font-medium text-white transition-colors duration-300 hover:bg-blue-800 sm:h-14">
+            Projects
+          </a>
+        </Link>
       </div>
 
       <div className="items relative mt-14 flex aspect-video w-full max-w-screen-md items-center justify-center overflow-hidden rounded-lg bg-black bg-opacity-20 sm:mt-28">
