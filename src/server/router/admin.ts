@@ -29,8 +29,20 @@ export const adminRouter = createRouter()
     }),
 
     async resolve({ input, ctx }) {
-      
+      const { title, link, featured } = input;
 
-      return;
+      try {
+        const project = await ctx.prisma.projects.create({
+          data: {
+            title,
+            link,
+            featured,
+          },
+        });
+
+        return { success: true, project };
+      } catch (error) {
+        return { success: false, error };
+      }
     },
   });
