@@ -4,8 +4,6 @@ import Landing from "../components/Landing";
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = (props) => {
-  const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
-
   return (
     <>
       <Head>

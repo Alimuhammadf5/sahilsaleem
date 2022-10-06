@@ -4,12 +4,17 @@ import twitterIcon from "../../../public/icon/twitter.svg";
 import youtubeIcon from "../../../public/icon/youtube.svg";
 import gmailIcon from "../../../public/icon/gmail.svg";
 import HamburgerMenu from "./HamburgerMenu";
+import Link from "next/link";
 
 const Header: FC = () => {
   return (
-    <header className="z-50 flex h-20 w-screen items-center justify-center bg-white px-6 backdrop-blur-lg">
+    <header className="sticky z-50 flex h-20 w-screen items-center justify-center bg-white px-6 backdrop-blur-lg">
       <nav className="flex w-screen max-w-screen-xl items-center justify-between">
-        <h1 className="z-50 text-2xl font-bold">Sahil.Saleem</h1>
+        <Link href={"/"}>
+          <h1 className="z-50 cursor-pointer text-2xl font-bold">
+            Sahil.Saleem
+          </h1>
+        </Link>
 
         <ul className="z-50 hidden items-center space-x-3 sm:flex">
           <a
