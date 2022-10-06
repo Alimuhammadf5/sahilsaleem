@@ -12,16 +12,17 @@ const AddProjects: FC = (props) => {
     link: "https://www.youtube.com/embed/",
     featured: false,
   });
-  const { data, mutate, isLoading } = trpc.useMutation("admin.addProject");
+  const { data, mutateAsync, isLoading } = trpc.useMutation("admin.addProject");
 
   const handleAddProject = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await mutate({
+      await mutateAsync({
         title: formInputed.title,
         link: formInputed.link,
         featured: formInputed.featured,
       });
+      toast.success("Project added successfully");
       setFormInputed({
         link: "https://www.youtube.com/embed/",
         title: "",

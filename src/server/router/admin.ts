@@ -64,4 +64,22 @@ export const adminRouter = createRouter()
       });
       return { success: true, projects };
     },
+  })
+  .mutation("deleteProject", {
+    input: z.object({
+      id: z.string(),
+    }),
+    async resolve({ input, ctx }) {
+      try {
+        const project = await ctx.prisma.projects.delete({
+          where: {
+            id: input.id as any,
+          },
+        });
+
+        return { success: true, project };
+      } catch (error) {
+        return { success: false, error };
+      }
+    },
   });
