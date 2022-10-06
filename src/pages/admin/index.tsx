@@ -1,5 +1,6 @@
 import { FC } from "react";
 import AdminState from "../../utils/adminStatus";
+import AddProjects from "./addProjects";
 import AdminLogin from "./adminLogin";
 
 const Admin: FC = (props) => {
@@ -7,8 +8,8 @@ const Admin: FC = (props) => {
 
   return (
     <main>
-      {admin ? (
-        <h1>Admin</h1>
+      {!admin ? (
+        <AddProjects />
       ) : (
         <AdminLogin setAdmin={setAdmin} admin={admin} />
       )}
