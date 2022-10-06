@@ -4,9 +4,12 @@ import twitterIcon from "../../../public/icon/twitter.svg";
 import youtubeIcon from "../../../public/icon/youtube.svg";
 import gmailIcon from "../../../public/icon/gmail.svg";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRecoilState } from "recoil";
+import { mailState } from "../../recoil/mailState";
 
 const HamburgerMenu = () => {
   const [menuState, setMenuState] = React.useState(false);
+  const [ismailState, setMailState] = useRecoilState(mailState);
 
   return (
     <React.Fragment>
@@ -86,7 +89,10 @@ const HamburgerMenu = () => {
                   </span>
                 </li>
               </a>
-              <li className="flex h-9 scale-125 cursor-pointer items-center space-x-2 rounded-md px-3 transition-colors duration-300 hover:bg-gray-100">
+              <li
+                onClick={() => setMailState(true)}
+                className="flex h-9 scale-125 cursor-pointer items-center space-x-2 rounded-md px-3 transition-colors duration-300 hover:bg-gray-100"
+              >
                 <Image
                   src={gmailIcon}
                   alt=""

@@ -5,8 +5,11 @@ import youtubeIcon from "../../../public/icon/youtube.svg";
 import gmailIcon from "../../../public/icon/gmail.svg";
 import HamburgerMenu from "./HamburgerMenu";
 import Link from "next/link";
+import { useRecoilState } from "recoil";
+import { mailState } from "../../recoil/mailState";
 
 const Header: FC = () => {
+  const [ismailState, setMailState] = useRecoilState(mailState);
   return (
     <header className="fixed top-0  z-50 flex h-20 w-screen items-center justify-center bg-white bg-opacity-50 px-6 backdrop-blur-lg">
       <nav className="flex w-screen max-w-screen-xl items-center justify-between">
@@ -55,7 +58,12 @@ const Header: FC = () => {
               </span>
             </li>
           </a>
-          <li className="flex h-9 cursor-pointer items-center space-x-2 rounded-md px-3 transition-colors duration-300 hover:bg-gray-100">
+          <li
+            onClick={() => {
+              setMailState(true);
+            }}
+            className="flex h-9 cursor-pointer items-center space-x-2 rounded-md px-3 transition-colors duration-300 hover:bg-gray-100"
+          >
             <Image
               src={gmailIcon}
               alt=""

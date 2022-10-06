@@ -1,9 +1,15 @@
+import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import { Toaster } from "react-hot-toast";
+import { useRecoilState } from "recoil";
+import { mailState } from "../recoil/mailState";
 import Header from "./Header/Header";
+import MailModel from "./mailModel";
 
-const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+const Layout: FC<{ children: ReactNode }> = (props) => {
+  const [ismailState, setMailState] = useRecoilState(mailState);
+
   return (
     <React.Fragment>
       <Head>
@@ -13,8 +19,9 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       </Head>
       <main className="min-h-screen overflow-x-hidden">
         <Toaster />
+        <AnimatePresence>{ismailState && <MailModel />}</AnimatePresence>
         <Header />
-        {children}
+        {props.children}
       </main>
     </React.Fragment>
   );

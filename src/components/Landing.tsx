@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useRef, useState } from "react";
+import { useRecoilState } from "recoil";
 import playIcon from "../../public/icon/play.svg";
+import { mailState } from "../recoil/mailState";
 
 const Landing: FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [ismailState, setMailState] = useRecoilState(mailState);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   console.log(videoRef.current?.paused);
 
@@ -17,7 +20,12 @@ const Landing: FC = () => {
         I CREATE WORLD CLASS VIDEO SOLUTIONS.
       </h1>
       <div className=" mt-8 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-7">
-        <button className="h-12 w-44 rounded-md bg-gray-200 font-medium transition-colors duration-300 hover:bg-gray-300 sm:h-14">
+        <button
+          onClick={() => {
+            setMailState(true);
+          }}
+          className="h-12 w-44 rounded-md bg-gray-200 font-medium transition-colors duration-300 hover:bg-gray-300 sm:h-14"
+        >
           Contact me
         </button>
 

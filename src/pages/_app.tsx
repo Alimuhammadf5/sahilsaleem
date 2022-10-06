@@ -10,6 +10,8 @@ import "../styles/globals.css";
 import "../styles/nprogress.css";
 import Router from "next/router";
 import nprogress from "nprogress";
+import { useState } from "react";
+import { RecoilRoot } from "recoil";
 
 Router.events.on("routeChangeStart", nprogress.start);
 Router.events.on("routeChangeComplete", nprogress.done);
@@ -17,9 +19,11 @@ Router.events.on("routeChangeError", nprogress.done);
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <RecoilRoot>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </RecoilRoot>
   );
 };
 
