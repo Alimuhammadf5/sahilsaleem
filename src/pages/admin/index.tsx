@@ -8,7 +8,7 @@ const Admin: FC = (props) => {
 
   return (
     <main>
-      {!admin ? (
+      {admin ? (
         <AddProjects />
       ) : (
         <AdminLogin setAdmin={setAdmin} admin={admin} />
