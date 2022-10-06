@@ -29,7 +29,7 @@ const Landing: FC = () => {
           controls={isPlaying}
           ref={videoRef}
           className="h-full w-full"
-          style={{ opacity: !videoRef.current?.paused ? 1 : 0 }}
+          style={{ opacity: !isPlaying ? 0 : 1 }}
           src={process.env.NEXT_PUBLIC_HIGHLIGHT_VIDEO_LINK}
         />
 

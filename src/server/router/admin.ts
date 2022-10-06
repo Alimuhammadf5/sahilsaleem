@@ -29,14 +29,12 @@ export const adminRouter = createRouter()
     }),
 
     async resolve({ input, ctx }) {
-      const { title, link, featured } = input;
-
       try {
         const project = await ctx.prisma.projects.create({
           data: {
-            title,
-            link,
-            featured,
+            title: input.title,
+            link: input.link,
+            featured: input.featured,
           },
         });
 

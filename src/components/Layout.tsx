@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { FC, ReactNode } from "react";
+import { Toaster } from "react-hot-toast";
 import Header from "./Header/Header";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
@@ -11,6 +12,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="min-h-screen overflow-x-hidden">
+        <Toaster />
         <Header />
         {children}
       </main>
