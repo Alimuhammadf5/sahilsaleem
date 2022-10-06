@@ -46,9 +46,6 @@ const AllProjects: FC = (props) => {
                   >
                     Delete
                   </button>
-                  <button className="w-full rounded-lg border border-yellow-500 py-2 text-yellow-500 hover:bg-yellow-500 hover:bg-opacity-20">
-                    Update
-                  </button>
                 </div>
               </div>
             ))}
