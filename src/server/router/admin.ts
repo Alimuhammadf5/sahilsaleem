@@ -43,4 +43,25 @@ export const adminRouter = createRouter()
         return { success: false, error };
       }
     },
+  })
+  .query("getProjects", {
+    async resolve({ ctx }) {
+      const projects = await ctx.prisma.projects.findMany({
+        orderBy: {
+          featured: "desc",
+        },
+      });
+      return { success: true, projects };
+    },
+  })
+  .query("featuredProjects", {
+    async resolve({ ctx }) {
+      const projects = await ctx.prisma.projects.findMany({
+        where: {
+          featured: true,
+        },
+        take: 4,
+      });
+      return { success: true, projects };
+    },
   });

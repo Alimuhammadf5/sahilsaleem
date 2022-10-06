@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Header: FC = () => {
   return (
-    <header className="sticky z-50 flex h-20 w-screen items-center justify-center bg-white px-6 backdrop-blur-lg">
+    <header className="fixed top-0  z-50 flex h-20 w-screen items-center justify-center bg-white bg-opacity-50 px-6 backdrop-blur-lg">
       <nav className="flex w-screen max-w-screen-xl items-center justify-between">
         <Link href={"/"}>
           <h1 className="z-50 cursor-pointer text-2xl font-bold">

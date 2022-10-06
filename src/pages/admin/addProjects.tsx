@@ -9,7 +9,7 @@ const AddProjects: FC = (props) => {
     featured: boolean;
   }>({
     title: "",
-    link: "",
+    link: "https://www.youtube.com/embed/",
     featured: false,
   });
   const { data, mutate, isLoading } = trpc.useMutation("admin.addProject");
@@ -17,13 +17,16 @@ const AddProjects: FC = (props) => {
   const handleAddProject = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      mutate({
+      await mutate({
         title: formInputed.title,
         link: formInputed.link,
         featured: formInputed.featured,
       });
-      setFormInputed({ link: "", title: "", featured: false });
-      toast.success("Project Added");
+      setFormInputed({
+        link: "https://www.youtube.com/embed/",
+        title: "",
+        featured: false,
+      });
     } catch (error) {
       toast.error("Something went wrong");
     }
