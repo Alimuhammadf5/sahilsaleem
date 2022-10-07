@@ -20,7 +20,7 @@ const MailModel: FC = (props) => {
       style={{ zIndex: 60 }}
     >
       <h1 className="mt-10 font-semibold" style={{ fontSize: "7vw" }}>
-        SahilSaleem006@gmail.com
+        Sahilsaleem369@gmail.com
       </h1>
 
       <button
