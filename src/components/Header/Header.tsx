@@ -7,6 +7,8 @@ import HamburgerMenu from "./HamburgerMenu";
 import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { mailState } from "../../recoil/mailState";
+import Router from "next/router";
+import { env } from "../../env/server.mjs";
 
 const Header: FC = () => {
   const [ismailState, setMailState] = useRecoilState(mailState);
@@ -75,9 +77,14 @@ const Header: FC = () => {
               Gmail
             </span>
           </li>
-          <button className="h-9 w-24 rounded-md bg-blue-600 text-sm font-semibold text-white transition-colors duration-300 hover:bg-blue-800">
+          <a
+            href={process.env.NEXT_PUBLIC_RESUME_LINK}
+            target="_blank"
+            rel="noreferrer"
+            className="flex h-9 w-24 items-center justify-center rounded-md bg-blue-600 text-sm font-semibold text-white transition-colors duration-300 hover:bg-blue-800"
+          >
             Resume
-          </button>
+          </a>
         </ul>
 
         {/* hamburger menu */}
