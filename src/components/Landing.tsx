@@ -9,7 +9,7 @@ const Landing: FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ismailState, setMailState] = useRecoilState(mailState);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  
+
   return (
     <div className=" flex w-full max-w-screen-lg flex-col items-center justify-center py-20 px-6">
       <h4 className="-z-10 text-center text-lg opacity-70 sm:text-2xl">
@@ -38,6 +38,7 @@ const Landing: FC = () => {
       <div className="items relative mt-14 flex aspect-video w-full max-w-screen-md items-center justify-center overflow-hidden rounded-lg bg-black bg-opacity-20 sm:mt-28">
         <video
           controls
+          autoPlay
           ref={videoRef}
           className="h-full w-full"
           src={process.env.NEXT_PUBLIC_HIGHLIGHT_VIDEO_LINK}
