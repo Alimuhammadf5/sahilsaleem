@@ -38,24 +38,13 @@ const Landing: FC = () => {
 
       <div className="items relative mt-14 flex aspect-video w-full max-w-screen-md items-center justify-center overflow-hidden rounded-lg bg-black bg-opacity-20 sm:mt-28">
         <video
-          controls={isPlaying}
+          controls
+          autoplay
           ref={videoRef}
           className="h-full w-full"
           style={{ opacity: !isPlaying ? 0 : 1 }}
           src={process.env.NEXT_PUBLIC_HIGHLIGHT_VIDEO_LINK}
         />
-
-        {!isPlaying && (
-          <button
-            onClick={() => {
-              setIsPlaying(true);
-              videoRef.current?.play();
-            }}
-            className="absolute z-10 opacity-30 transition-opacity duration-300 hover:opacity-100"
-          >
-            <Image src={playIcon} alt="play icon" />
-          </button>
-        )}
       </div>
     </div>
   );
