@@ -38,7 +38,7 @@ const Landing: FC = () => {
       <div className="items relative mt-14 flex aspect-video w-full max-w-screen-md items-center justify-center overflow-hidden rounded-lg bg-black bg-opacity-20 sm:mt-28">
         <video
           controls
-          autoPlay
+          
           ref={videoRef}
           className="h-full w-full"
           src={process.env.NEXT_PUBLIC_HIGHLIGHT_VIDEO_LINK}
